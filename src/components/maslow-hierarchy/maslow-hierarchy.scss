@@ -1,0 +1,43 @@
+@mixin hierarchy-level($color, $width) {
+    --diff: calc(#{$width} + 10%);
+    background-color: $color;
+    clip-path: polygon(calc(50% - #{$width}) 0, calc(50% + #{$width}) 0, calc(50% + #{var(--diff)}) 100%, calc(50% - #{var(--diff)}) 100%);
+}
+
+.hierarchy-level {
+    height: 10vh;
+    width: 100%;
+    opacity: 0.5;
+
+    &.active {
+        opacity: 1;
+        transform: scale(1.05);
+        z-index: 10;
+    }
+
+    > svg {
+        stroke: white;
+        visibility: hidden;
+    }
+
+    &:hover > svg,
+    &.active > svg {
+        visibility: visible;
+    }
+}
+
+.hierarchy-level.top {
+    @include hierarchy-level(blue, 0%);
+}
+
+.hierarchy-level.upper {
+    @include hierarchy-level(green, 10%)
+}
+
+.hierarchy-level.lower {
+    @include hierarchy-level(orange, 20%)
+}
+
+.hierarchy-level.bottom {
+    @include hierarchy-level(red, 30%)
+}
