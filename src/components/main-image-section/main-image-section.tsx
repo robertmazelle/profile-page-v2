@@ -8,7 +8,10 @@ export default function MainImageSection() {
     const [title, setTitle] = useState(titleArray[0]);
 
     useEffect(() => {
-      const changeTitle = ( index: number) => {
+        changeTitle(0);
+    }, [])
+
+    const changeTitle = ( index: number) => {
         if (index > titleArray?.length - 1) {
             return;
         }
@@ -24,8 +27,7 @@ export default function MainImageSection() {
 
         changeTitle(0);
     })
-
-
+    
     return (<header className="bg-white shadow">
     <div className="flex justify-center relative">
       <img className='mx-auto profile-image w-full overflow-hidden' src={Image} alt="profile" />
