@@ -23,7 +23,7 @@ export default function MainImageSection() {
     }
 
         changeTitle(0);
-    }, [titleArray, initialTimeout, setTitle])
+    })
 
 
     return (<header className="bg-white shadow">
