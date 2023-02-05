@@ -8,10 +8,7 @@ export default function MainImageSection() {
     const [title, setTitle] = useState(titleArray[0]);
 
     useEffect(() => {
-        changeTitle(0);
-    }, [])
-
-    const changeTitle = ( index: number) => {
+      const changeTitle = ( index: number) => {
         if (index > titleArray?.length - 1) {
             return;
         }
@@ -24,6 +21,10 @@ export default function MainImageSection() {
             changeTitle(index + 1);
         }, timeout)
     }
+
+        changeTitle(0);
+    }, [titleArray, initialTimeout, setTitle])
+
 
     return (<header className="bg-white shadow">
     <div className="flex justify-center relative">
