@@ -25,6 +25,9 @@ export default function MainImageSection() {
         }, timeout)
     }
 
+        changeTitle(0);
+    })
+    
     return (<header className="bg-white shadow">
     <div className="flex justify-center relative">
       <img className='mx-auto profile-image w-full overflow-hidden' src={Image} alt="profile" />
