@@ -20,9 +20,9 @@ export default function MainImageSection() {
         setTitle(titleArray[index]);
         changeTitle(index + 1);
       }, timeout)
-
-      changeTitle(0);
     }
+
+    changeTitle(0);
   })
 
 
